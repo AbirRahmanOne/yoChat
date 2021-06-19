@@ -4,8 +4,8 @@
   "description": "Real-time chat application(yoChat)",
   "main": "app.js",
   "scripts": {
-    "start": "nodemon app",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "NODE_ENV=development nodemon app.js",
+    "prod": "NODE_ENV=production node app"
   },
   "repository": {
     "type": "git",
