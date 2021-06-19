@@ -6,8 +6,10 @@ const path = require("path");
 
 // internal imports 
 const connectDB = require('./config/db')
-const {notFoundHandler, errorHandler } = require('./middlewares/common')
-
+const {notFoundHandler, errorHandler } = require('./middlewares/common/errorHandler')
+const loginRouter = require('./router/loginRouter');
+const usersRouter = require("./router/usersRouter");
+const inboxRouter = require("./router/inboxRouter");
 
 
 const app =express()
@@ -40,6 +42,10 @@ app.get("/", (req, res)=>{
 */
 
 // routing setup
+app.use("/", loginRouter);
+app.use("/users", usersRouter);
+app.use("/inbox", inboxRouter);
+
 
 
 // 404 not found handler
